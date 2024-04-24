@@ -1,7 +1,9 @@
 import { Box, Flex, Grid, Heading, Image, Text, Button, VStack, HStack, IconButton } from "@chakra-ui/react";
+import { useCart } from "../context/CartContext";
 import { FaShoppingCart, FaHeart, FaSearch } from "react-icons/fa";
 
 const Index = () => {
+  const { addToCart } = useCart();
   const products = [
     {
       id: 1,
@@ -46,7 +48,7 @@ const Index = () => {
               <Text fontSize="md" color="gray.500">
                 {product.price}
               </Text>
-              <Button colorScheme="blue" leftIcon={<FaShoppingCart />}>
+              <Button colorScheme="blue" leftIcon={<FaShoppingCart />} onClick={() => addToCart(product)}>
                 Add to Cart
               </Button>
             </VStack>
