@@ -35,10 +35,10 @@ const Index = () => {
           <IconButton icon={<FaShoppingCart />} aria-label="Cart" />
         </HStack>
       </Flex>
-      <Grid templateColumns="repeat(3, 1fr)" gap={6}>
+      <Grid templateColumns="repeat(4, 1fr)" gap={4}>
         {products.map((product) => (
           <Box key={product.id} boxShadow="md" p={5} rounded="md" bg="white">
-            <Image src={product.image} alt={product.name} borderRadius="md" />
+            <Image src={product.image} alt={product.name} borderRadius="md" boxSize="300px" objectFit="cover" />
             <VStack align="stretch" mt={4}>
               <Text fontWeight="bold" fontSize="lg">
                 {product.name}
